@@ -1,4 +1,4 @@
-
+    
 package servicios;
 
 import entidades.Electrodomestico;
@@ -34,10 +34,12 @@ public class TelevisorServicios extends ElectrodomesticoServicios{
             else 
                 System.out.println("Ingrese una opcion incorrecta. Por favor, ingrese de nuevo...");
         } while (correcto);
-        return (new Televisor(pulgadas,sintonizador,super.precioElectrodomestico(e),super.colorElectrodomestico(e),super.tipoConsumoEnergeticoElectrodomestico(e),super.pesoElectrodomestico(e)));
+        Televisor tAux = new Televisor(pulgadas,sintonizador,super.precioElectrodomestico(e),super.colorElectrodomestico(e),super.tipoConsumoEnergeticoElectrodomestico(e),super.pesoElectrodomestico(e));
+        tAux = precioFinal(tAux);
+        return (tAux);
     }
     
-    public Televisor PrecioFinal(Televisor t) {
+    public Televisor precioFinal(Televisor t) {
         
         Electrodomestico e = super.PrecioFinal(t);
         if (t.getResolucion() > 40)  {

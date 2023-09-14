@@ -18,7 +18,9 @@ public class LavadoraServicios extends ElectrodomesticoServicios    {
         System.out.println();
         System.out.print("Ingrese los kilos de carga de la lavadora: ");
         Double kilo = leer.nextDouble();
-        return (new Lavadora(kilo,super.precioElectrodomestico(e),super.colorElectrodomestico(e),super.tipoConsumoEnergeticoElectrodomestico(e),super.pesoElectrodomestico(e)));
+        Lavadora lAux = new Lavadora(kilo,super.precioElectrodomestico(e),super.colorElectrodomestico(e),super.tipoConsumoEnergeticoElectrodomestico(e),super.pesoElectrodomestico(e));
+        lAux = PrecioFinal(lAux);
+        return (lAux);
     }
     
     public Lavadora PrecioFinal(Lavadora l) {
